@@ -1,4 +1,15 @@
 This query show all the user agent
 index=botsv2 sourcetype=stream:http
 | stats count by http_user_agent
-| sort + count
+| sort + count  
+
+To get all the activites of the user agent( site, url_path, src_ip, http_method)
+index=botsv2 sourcetype=stream:http http_user_agent="Mozilla/5.0 (X11; U; Linux i686; ko-KP; rv: 19.1br) Gecko/20130508 Fedora/1.9.1-2.5.rs3.0 NaenaraBrowser/3.5b4"
+
+statistically show the source and destination IP address  
+index=botsv2 sourcetype=stream:http "  http_user_agent="Mozilla/5.0 (X11; U; Linux i686; ko-KP; rv: 19.1br) Gecko/20130508 Fedora/1.9.1-2.5.rs3.0 NaenaraBrowser/3.5b4"
+| stats count by src dest
+
+Display time, source, destination, URI_path and URL in a table format 
+index=botsv2 sourcetype=stream:http site="www.froth.ly"  http_user_agent="Mozilla/5.0 (X11; U; Linux i686; ko-KP; rv: 19.1br) Gecko/20130508 Fedora/1.9.1-2.5.rs3.0 NaenaraBrowser/3.5b4" http_content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+| table _time, src, dest, uri_path, url
