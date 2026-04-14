@@ -12,7 +12,7 @@ Intelligence Input: Law enforcement warned of a campaign targeting our industry.
 - Dataset: BOTSV2
 - Enrichment: ipinfo and whatismybrower (for geographical and useragent infomation)
 -  Environment: Window
--  Analysis Focus: IP Geographical, user-agent, ASN Reputaion 
+-  Analysis Focus: IP Geographical, user-agent, ASN Reputation
 
   ## Threat hunt logic
   - Identify unusual http_user_agent mostly on the rare string.(Mozilla/5.0 (X11; U; Linux i686; ko-KP; rv: 19.1br) Gecko/20130508 Fedora/1.9.1-2.5.rs3.0 NaenaraBrowser/3.5b4") 
