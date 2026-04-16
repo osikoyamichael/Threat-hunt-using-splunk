@@ -20,18 +20,21 @@ Intelligence Input: Law enforcement warned of a campaign targeting our industry.
   - Check the activities, url_path , http method(GET and POST )
 
   ## MITRE ATT&CK Mapping
-  - T1592: Gather Victim Host Information	Reconnaissance
-  - T1071.001:	Application Layer Protocol: Web Protocols	Command & Control
-  - T1589:	Gather Victim Identity Information	Reconnaissance
+- TA0007 – Discovery
+- TA0009 – Collection
+- T1213 – Data from Information Repositories
+- T1592 – Gather Victim Identity Information
+## Key Findings
+- Sensitive file /files/company_contacts.xlsx was publicly accessible
+- External entity successfully downloaded internal contact database
+- Suspicious user-agent indicated attempted obfuscation
+- Activity aligned with early-stage reconnaissance tactics
 
-## 🏆 Key Achievements & Strategic Outcomes
-
-- Intelligence-Led Defense: Successfully converted a generic law enforcement advisory into a specific, actionable hunting query, reducing the time from "threat awareness" to "threat detection."
-
-- Attack Surface Visibility: Identified 100% of the non-standard browser traffic targeting the (www.froth.ly) infrastructure, uncovering reconnaissance activity that bypassed traditional signature-based IDS.
-
-- Operational Efficiency: Integrated the IPinfo API to automate geographic and ASN enrichment. This reduced the investigation time (MTTI) per IP from several minutes of manual lookup to near-instant results.
-
-- Proactive Mitigation: Developed a custom Correlation Search in Splunk to alert the SOC team in real-time when "Long Tail" User-Agents are detected on sensitive web assets.
-
-- False Positive Reduction: Utilized statistical analysis (the "Power of the Outlier") to distinguish between legitimate automated bots and targeted adversary reconnaissance.
+## Mitigation & Strategic Outcomes
+- Removed public access to sensitive internal files (/files/company_contacts.xlsx)
+- Enforced authentication and access controls
+- Implentation of WAF(to detect and  block suscipous user agent)
+- Encrypt file at rest and transit(TLS)
+- Conducted phishing awareness training
+- Alerted employees about possible targeted attacks
+- Simulated phishing campaigns to test readiness
