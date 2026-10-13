@@ -10,7 +10,7 @@ Intelligence Input: Law enforcement warned of a campaign targeting our industry.
 ## Tech stack & Lab Environment 
 - SIEM: splunk
 - Dataset: BOTSV2
-- Enrichment: ipinfo and whatismybrower (for geographical and useragent infomation)
+- Enrichment: Ipinfo and whatismybrower (for geographical and useragent infomation)
 -  Environment: Window
 -  Analysis Focus: IP Geographical, user-agent, ASN Reputation
 
